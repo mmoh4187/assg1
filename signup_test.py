@@ -15,11 +15,15 @@ class UserSignupTestCase(unittest.TestCase):
 
     def test_signUp_ok(self):
         rv = self.signUp("ray", "ray@gmail.com")
-        assert b'Success' in rv.data
+        assert b'success'
 
     def test_signUp_not_ok(self):
         rv = self.signUp("admin", "admin@admin.com")
-        assert b'Fail' in rv.data
+        assert b'fail'
+	
+    def test_signUp_not_ok1(self):
+        rv = self.signUp("ray", "admin@admin.com")
+        assert b'fail'
 
 if __name__ == '__main__':
     unittest.main()
