@@ -1,6 +1,6 @@
 from selenium import webdriver
 import threading
-import main
+import main 
 
 def before_all(ctx):
     ctx.server = main
