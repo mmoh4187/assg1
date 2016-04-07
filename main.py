@@ -75,10 +75,10 @@ def signUp():
         if inputName not in users:							
          # emails.append(inputEmail)
           #users[inputName] = password
-          return render_template('reg.html',error = 'Your Account has been successfully registered')
+          return "success"
         else:
-           return render_template('error.html',error = 'user already exists in the current database')
+           return "fail"
       else:
-           return render_template('error.html',error = 'user already exists in the current database')
+           return "fail"
 if __name__ == "__main__":
     serve_forever()
