@@ -62,7 +62,7 @@ def validateLogin():
         if password == database :
            return render_template('userHome.html',home = name)
         else:
-           return render_template('error.html', error = "Wrong username or password")
+           return render_template('wrong.html', error = "Wrong username or password")
 
 @app.route('/signUp',methods=['POST'])
 def signUp():
@@ -75,10 +75,10 @@ def signUp():
         if inputName not in users:							
          # emails.append(inputEmail)
           #users[inputName] = password
-          return "success"
+          return render_template('reg.html',error = 'Your Account has been successfully registered')
         else:
-           return "fail"
+           return render_template('error.html',error = 'user already exists in the current database')
       else:
-           return "fail"
+           return render_template('error.html',error = 'user already exists in the current database')
 if __name__ == "__main__":
     serve_forever()
