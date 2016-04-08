@@ -10,7 +10,7 @@ Feature: As an executive, I want users to be able to sign up,
       | username  | email             | password |
       | mohamed   | mohamed@gmail.com | 123456   |
       | admin     | ray@yahoo.com     | 123456   |
-	  | ray       | admin@admin.com   | 123456   |
+      | ray       | admin@admin.com   | 123456   |
   Scenario Outline: new user
     Given  at the Sign-Up page
     When   the <username> or <email> is not exist in db. it does not matter if <password> is exist or not. 
