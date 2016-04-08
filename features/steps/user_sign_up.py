@@ -23,7 +23,7 @@ def step_impl(context, username, email, password):
     :type context: behave.runner.Context
     :type username: str
     :type email: str
-	:type password: str
+    :type password: str
     """
     submit_username_email(context, username, email, password)
 
