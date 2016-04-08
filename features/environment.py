@@ -1,10 +1,10 @@
 from selenium import webdriver
 import threading
-import main 
+import sign_up 
 
 def before_all(ctx):
-    ctx.server = main
-    ctx.address = main.address
+    ctx.server = sign_up
+    ctx.address = sign_up.address
     ctx.thread = threading.Thread(target=ctx.server.serve_forever)
     ctx.thread.start()  # start flask app server
     ctx.browser = webdriver.Firefox()

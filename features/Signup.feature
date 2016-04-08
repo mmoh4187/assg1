@@ -4,18 +4,18 @@ Feature: As an executive, I want users to be able to sign up,
 
   Scenario Outline: user already exist 
     Given  at the Sign-Up page
-    When   the <inputName> or <inputEmail> is already exist
-    Then   the system should return "fail" as the registration status of the user 
+    When   the <username> or <email> is already exist. it does not matter if <password> is exist or not. 
+    Then   the system should return "Fail" as the registration status of the user 
 	Examples:
-      | inputName | inputEmail        |
-      | mohamed   | mohamed@gmail.com |
-      | admin     | admin@admin.com   |
-	
+      | username  | email             | password |
+      | mohamed   | mohamed@gmail.com | 123456   |
+      | admin     | ray@yahoo.com     | 123456   |
+	  | ray       | admin@admin.com   | 123456   |
   Scenario Outline: new user
     Given  at the Sign-Up page
-    When   the <inputName> or <inputEmail> is not exist in db
-    Then   the system should return "success" as the registration status of the user
+    When   the <username> or <email> is not exist in db. it does not matter if <password> is exist or not. 
+    Then   the system should return "Success" as the registration status of the user
 	Examples:
-      | inputName | inputEmail        |
-      | mike      | mike@gmail.com    |
-      | ray       | ray@yahoo.com     |
+      | username  | email             | password |
+      | mike      | mike@gmail.com    | 123456   |
+      | ray       | ray@yahoo.com     | 123456   |
