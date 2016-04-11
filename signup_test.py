@@ -1,16 +1,16 @@
-import main
+import sign_up
 import unittest
 
 
 class UserSignupTestCase(unittest.TestCase):
     def setUp(self):
-        main.app.config['TESTING'] = True
-        self.app = main.app.test_client()
+        sign_up.app.config['TESTING'] = True
+        self.app = sign_up.app.test_client()
 
-    def signUp(self, inputName, inputEmail):
+    def signUp(self, username, email):
         return self.app.post('/signUp', data=dict(
-            inputName = inputName,
-            inputEmail = inputEmail
+            username = username,
+            email = email
         ),follow_redirects=True)
 
     def test_signUp_ok(self):

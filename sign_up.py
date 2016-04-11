@@ -20,6 +20,10 @@ def shutdown_server():
 @app.route('/shutdown')
 def shutdown():
     shutdown_server()
+	
+@app.route('/')
+def main():
+     return render_template("regs.html")
 
 
 @app.route('/signup', methods=['POST', 'GET'])
@@ -33,7 +37,7 @@ def login():
         else:
             return "Fail"
     else:
-        return render_template("login.html")
+        return render_template("regs.html")
 
 
 if __name__ == '__main__':
